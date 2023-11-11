@@ -8,6 +8,6 @@ const pool = new Pool({
     port: 5432
 })
                                                                                                                                                                    
-postgres://me:gxQFvhvaTfIMpLd0OSTADsp2kLnA9agd@dpg-cl7eku76e7vc739s6630-a.oregon-postgres.render.com/ownxmind
+
 
 module.exports = pool
