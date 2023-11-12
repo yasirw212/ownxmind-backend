@@ -8,7 +8,7 @@
   "main": "Handling and receiving requests made to server and transmitting data to/from database.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Yasir Williams",
   "license": "ISC",

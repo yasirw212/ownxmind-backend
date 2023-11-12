@@ -3,7 +3,7 @@ const db = require('../model/database.js')
 
 const getProducts = async (req, res) =>{
     try {
-        await pool.query(`SELECT * FROM products`, (err, results) => {
+        await db.query(`SELECT * FROM products`, (err, results) => {
             if(err){
                 console.log(err)
             }
@@ -17,7 +17,7 @@ const getProducts = async (req, res) =>{
 const getPhotos = async (req, res) => {
     
     try {
-        await pool.query(`SELECT * FROM products_photos`, (err, results) => {
+        await db.query(`SELECT * FROM products_photos`, (err, results) => {
             if(err){
                 console.log(err)
             }
@@ -31,9 +31,9 @@ const getPhotos = async (req, res) => {
 const getPhotosById = async (req, res) =>{
     const {id} = req.params
     try {
-        await pool.query(`SELECT * FROM products_photos WHERE products_id = $1`, [id], (err, results) => {
+        await db.query(`SELECT * FROM products_photos WHERE products_id = $1`, [id], (err, results) => {
             if(err){
-                throw Error 
+                console.log(err)
             }
             return res.status(200).json(results.rows)
         })
