@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-app.use(cors())
+app.use(cors({
+    methods: ["GET", "POST"]
+}))
 
 const productsRouter = require('./routes/products.js')
 const photosRouter = require("./routes/photos.js") 
