@@ -17,7 +17,7 @@ const orderRouter = require("./routes/order.js")
 
 const PORT = process.env.PORT || 4001
 app.use(express.json())
-
+app.set('trust proxy', 1)
 app.use(session({
     saveUninitialized: true,
     resave: true,
