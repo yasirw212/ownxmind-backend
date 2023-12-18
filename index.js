@@ -6,7 +6,7 @@ const mongoStore = require('connect-mongo')
 require('dotenv').config()
 
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://ownxmind.netlify.app"],
     methods: ["GET", "POST"],
     credentials: true
 }))
