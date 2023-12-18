@@ -4,7 +4,6 @@ const supaBase = require('../model/database')
 const getProducts = async (req, res) =>{
     try {
         const {data} = await supaBase.from('products').select('*')
-        console.log(data)
         if(!data) {
             throw new Error('failed')
         }
@@ -17,7 +16,6 @@ const getProducts = async (req, res) =>{
 const getPhotos = async (req, res) => { 
     try {
         const {data} = await supaBase.from('products_photos').select('*')
-        console.log(data)
         if(!data) {
             throw new Error('failed')
         }
@@ -30,7 +28,6 @@ const getPhotos = async (req, res) => {
 const getPhotosById = async (req, res) =>{
     try {
         const {data} = await supaBase.from('products_photos').select('*')
-        console.log(data)
         if(!data) {
             throw new Error('failed')
         }
