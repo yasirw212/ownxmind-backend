@@ -6,16 +6,15 @@ const mongoStore = require('connect-mongo')
 require('dotenv').config()
 
 app.use(cors({
-    origin: ["https://ownxmind.netlify.app"],
+    origin: ["https://ownxmind.netlify.app", "http://localhost:5173"],
     methods: ["GET", "POST"],
     credentials: true
 }))
 
 const productsRouter = require('./routes/products.js')
-const photosRouter = require("./routes/photos.js") 
 const orderRouter = require("./routes/order.js")
 
-const PORT = process.env.PORT || 4001
+const PORT = process.env.PORT || 4000
 app.use(express.json())
 app.set('trust proxy', 1)
 app.use(session({
@@ -38,7 +37,6 @@ app.get('/', (req, res, next) => {
 app.post('/cart')
 
 app.use ('/products', productsRouter)
-app.use ('/photos', photosRouter)
 app.use ('/order', orderRouter)
 
 app.listen(PORT, () =>{
